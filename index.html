@@ -13,8 +13,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -24,8 +25,13 @@
     <section id="capa"
         class="min-h-screen bg-black flex justify-center items-center px-4">
 
-    <div
-        class="max-w-[380px] mx-auto min-h-screen flex flex-col items-center text-center px-5 py-8 relative">
+            <!-- Background Desktop -->
+        <div
+            class="hidden md:block absolute inset-0 bg-contain bg-center bg-no-repeat opacity-70"
+            style="background-image: url('img/arabesco-laterais.png');">
+        </div>
+
+        <div class="max-w-[380px] mx-auto min-h-screen flex flex-col items-center text-center px-5 py-8 relative">
 
             <!-- Nome -->
             <h1
@@ -57,7 +63,7 @@
 
             <img src="img/arabesco-inferior.png" alt="arabesco-inferior">
 
-            <button id="btnEntrar" class="mt-6 text-gray-400 tracking-[4px] hover:text-white transition" style="font-family: 'Playfair Display', serif;">
+            <button id="btnEntrar" class=" text-gray-400 tracking-[4px] hover:text-white transition" style="font-family: 'Playfair Display', serif;">
             <!-- Envelope -->
             <img src="img/convite.png" alt="convite" class="mb-6">
 
@@ -72,11 +78,17 @@
     <!-- CONVITE -->
     <section id="convite"
         class="hidden min-h-screen bg-black text-white relative overflow-hidden">
+        <div
+            class="hidden md:block absolute inset-0 bg-contain bg-center bg-no-repeat opacity-70 pointer-events-none"
+            style="background-image: url('img/arabesco-laterais.png');">
+        </div>
+
         <!-- Máscara -->
         <img
             src="img/mascara.png"
-            class="absolute top-0 right-0 w-40 sm:w-52 md:w-64 lg:w-80 z-10"
+            class="absolute top-0 right-0 w-40 sm:w-52 md:w-50 lg:w-50 z-10"
             alt="Máscara">
+
         <div
             class="max-w-[380px] mx-auto min-h-screen flex flex-col items-center text-center px-6 py-8">
 
@@ -107,7 +119,7 @@
                 <img
                     src="img/arabesco-inferior.png"
                     alt="arabesco-inferior"
-                    class="w-20 -mt-1">
+                    class="w-20">
 
             </div>
 
@@ -148,9 +160,7 @@
 
             <!-- Data -->
             <div
-                class="mt-10 text-white text-2xl font-bold uppercase"
-                style="font-family: 'Playfair Display', serif;">
-
+                class="mt-10 text-white text-2xl font-bold uppercase">
                 04 | DEZEMBRO | ÀS 20:00
 
             </div>
@@ -174,7 +184,7 @@
 
                 <!-- Whats -->
                 <a
-                    href="https://wa.me/5519983042395"
+                    href="https://wa.me/5519983042395?text=Olá!%20Gostaria%20de%20confirmar%20minha%20presença%20no%20Baile%20de%20Máscaras%20dos%2015%20anos%20da%20Júlia."
                     target="_blank"
                     class="w-24 h-24 bg-[#9d1414] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition duration-300">
 
@@ -186,8 +196,10 @@
                 </a>
                 <!-- Localização -->
                 <a
-                    href="#"
-                    class="w-24 h-24 bg-[#9d1414] rounded-full flex items-center justify-center shadow-xl">
+                    href="https://maps.app.goo.gl/bTWgwvDjULR4H4Aq6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-24 h-24 bg-[#9d1414] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition duration-300">
 
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="w-12 h-12"
