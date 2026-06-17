@@ -17,6 +17,169 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
+
+    <style>
+    .fade-out {
+        animation: fadeOut 1s forwards;
+    }
+
+    .fade-in {
+        animation: fadeIn 1.2s forwards;
+    }
+
+    .envelope-open {
+        animation: envelopeOpen 0.8s ease forwards;
+    }
+
+    #mascara {
+        opacity: 0;
+        transform: translate(120px,-120px);
+    }
+
+    #logoConvite {
+        opacity: 0;
+        transform: translate(-120px,-120px);
+    }
+
+    #conteudoConvite {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .mascara-animar {
+        animation: entrarMascara .8s ease forwards;
+    }
+
+    .logo-animar {
+        animation: entrarLogo .8s ease forwards;
+    }
+
+    .conteudo-animar {
+        animation: revelarConteudo 1s ease forwards;
+    }
+
+    #poeiraDourada {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .poeira-animar {
+        animation: revelarPoeira 1s ease forwards;
+    }
+
+    #borda {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .borda-animar {
+        animation: revelarBorda 1s ease forwards;
+    }
+
+    @keyframes fadeOut {
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes envelopeOpen {
+
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.15);
+        }
+
+        100% {
+            transform: scale(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes entrarMascara {
+
+        from {
+            opacity: 0;
+            transform: translate(120px,-120px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(0,0);
+        }
+
+    }
+
+    @keyframes entrarLogo {
+
+        from {
+            opacity: 0;
+            transform: translate(-120px,-120px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(0,0);
+        }
+
+    }
+
+    @keyframes revelarConteudo {
+
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
+    @keyframes revelarPoeira {
+
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 0.4;
+            transform: translateY(0);
+        }
+
+    }
+
+    @keyframes revelarBorda {
+
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 0.7;
+            transform: translateY(0);
+        }
+
+    }
+    </style>
 </head>
 
 <body class="bg-black">
@@ -24,12 +187,6 @@
     <!-- CAPA -->
     <section id="capa"
         class="min-h-screen bg-black flex justify-center items-center px-4">
-
-            <!-- Background Desktop -->
-        <div
-            class="hidden md:block absolute inset-0 bg-contain bg-center bg-no-repeat opacity-70"
-            style="background-image: url('img/arabesco-laterais.png');">
-        </div>
 
         <div class="max-w-[380px] mx-auto min-h-screen flex flex-col items-center text-center px-5 py-8 relative">
 
@@ -65,7 +222,11 @@
 
             <button id="btnEntrar" class=" text-gray-400 tracking-[4px] hover:text-white transition" style="font-family: 'Playfair Display', serif;">
             <!-- Envelope -->
-            <img src="img/convite.png" alt="convite" class="mb-6">
+            <img
+                id="envelope"
+                src="img/convite.png"
+                alt="convite"
+                class="mb-6">
 
                 TOQUE PARA ABRIR
 
@@ -78,50 +239,62 @@
     <!-- CONVITE -->
     <section id="convite"
         class="hidden min-h-screen bg-black text-white relative overflow-hidden">
+        <!-- Poeira dourada apenas mobile -->
+        <img
+            id="poeiraDourada"
+            src="img/poeira-dourada.png"
+            alt=""
+            class="block md:hidden absolute bottom-0 left-0 mt-8 w-full pointer-events-none z-0">
         <div
+            id="borda"
             class="hidden md:block absolute inset-0 bg-contain bg-center bg-no-repeat opacity-70 pointer-events-none"
             style="background-image: url('img/arabesco-laterais.png');">
         </div>
+        
 
         <!-- Máscara -->
         <img
             src="img/mascara.png"
+            id="mascara"
             class="absolute top-0 right-0 w-40 sm:w-52 md:w-50 lg:w-50 z-10"
             alt="Máscara">
 
-        <div
-            class="max-w-[380px] mx-auto min-h-screen flex flex-col items-center text-center px-6 py-8">
-
             <!-- Logo Baile de Máscaras -->
-            <div class="absolute top-4 left-4 sm:top-6 sm:left-6 flex flex-col items-center z-20">
+        <div 
+            id="logoConvite"
+            class="absolute top-4 left-4 sm:top-6 sm:left-6 flex flex-col items-center z-20">
 
-                <img
-                    src="img/arabesco-superior.png"
-                    alt="arabesco-superior"
-                    class="w-24">
+            <img
+                src="img/arabesco-superior.png"
+                alt="arabesco-superior"
+                class="w-24">
 
-                <p
-                    class="text-[#c9a227] text-xs tracking-[3px] -mt-1"
-                    style="font-family: 'Cormorant Garamond', serif;">
+            <p
+                class="text-[#c9a227] text-xs tracking-[3px] -mt-1"
+                style="font-family: 'Cormorant Garamond', serif;">
 
-                    BAILE DE
+                BAILE DE
 
-                </p>
+            </p>
 
-                <h3
-                    class="text-red-700 text-xl font-semibold tracking-wider leading-none"
-                    style="font-family: 'Playfair Display', serif;">
+            <h3
+                class="text-red-700 text-xl font-semibold tracking-wider leading-none"
+                style="font-family: 'Playfair Display', serif;">
 
-                    MÁSCARAS
+                MÁSCARAS
 
-                </h3>
+            </h3>
 
-                <img
-                    src="img/arabesco-inferior.png"
-                    alt="arabesco-inferior"
-                    class="w-20">
+            <img
+                src="img/arabesco-inferior.png"
+                alt="arabesco-inferior"
+                class="w-20">
 
-            </div>
+        </div>
+        
+        <div
+            id="conteudoConvite"
+            class="max-w-[380px] mx-auto min-h-screen flex flex-col items-center text-center px-6 py-8">
 
             <h1
                 style="font-family:'Great Vibes',cursive;"
@@ -180,7 +353,7 @@
                 alt="arabesco">
 
             <!-- Ícones -->
-            <div class="flex gap-12 mt-10">
+            <div class="flex gap-12 mt-10 mb-6">
 
                 <!-- Whats -->
                 <a
