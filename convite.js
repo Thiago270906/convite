@@ -1,8 +1,11 @@
 const btnEntrar = document.getElementById("btnEntrar");
 const capa = document.getElementById("capa");
 const convite = document.getElementById("convite");
-const envelope = document.getElementById("envelope");
+const btnMais = document.getElementById('btnMais');
+const conviteExtra = document.getElementById('conviteExtra');
 
+
+const envelope = document.getElementById("envelope");
 const mascara = document.getElementById("mascara");
 const logo = document.getElementById("logoConvite");
 const conteudo = document.getElementById("conteudoConvite");
@@ -46,4 +49,12 @@ btnEntrar.addEventListener("click", () => {
 
     }, 700);
 
+});
+
+btnMais.addEventListener('click', () => {
+    conviteExtra.classList.remove('hidden');
+
+    conviteExtra.scrollIntoView({
+        behavior: 'smooth'
+    });
 });
