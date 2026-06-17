@@ -58,3 +58,52 @@ btnMais.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+// Data da festa
+const dataEvento = new Date("December 4, 2026 20:00:00").getTime();
+
+function atualizarContador() {
+
+    const agora = new Date().getTime();
+    const distancia = dataEvento - agora;
+
+    if (distancia <= 0) {
+
+        document.getElementById("contador").innerHTML =
+            "<span class='text-[#d4af37] text-xl'>Chegou o grande dia!</span>";
+
+        return;
+    }
+
+    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+
+    const horas = Math.floor(
+        (distancia % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
+
+    const minutos = Math.floor(
+        (distancia % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
+
+    const segundos = Math.floor(
+        (distancia % (1000 * 60))
+        / 1000
+    );
+
+    document.getElementById("dias").textContent =
+        String(dias).padStart(2, "0");
+
+    document.getElementById("horas").textContent =
+        String(horas).padStart(2, "0");
+
+    document.getElementById("minutos").textContent =
+        String(minutos).padStart(2, "0");
+
+    document.getElementById("segundos").textContent =
+        String(segundos).padStart(2, "0");
+}
+
+atualizarContador();
+setInterval(atualizarContador, 1000);
