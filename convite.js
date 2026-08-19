@@ -60,7 +60,7 @@ btnMais.addEventListener('click', () => {
 });
 
 // Data da festa
-const dataEvento = new Date("December 4, 2026 20:00:00").getTime();
+const dataEvento = new Date("December 4, 2026 19:30:00").getTime();
 
 function atualizarContador() {
 
