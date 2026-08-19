@@ -19,6 +19,33 @@
 
 
     <style>
+    /* Efeito Dourado Metálico Elegante */
+    .texto-dourado {
+        background: linear-gradient(135deg, #cda729 0%, #cebb62 45%, #ac8426 80%, #a4721c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.5));
+        display: inline-block;
+        padding: 0.1em 0.3em; /* Dá o espaço necessário para a caligrafia não ser cortada */
+    }
+/* Configuração do Fundo - Mobile (padrão) */
+    body {
+        background-color: #000000;
+        background-image: url('img/fundo.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    /* Configuração do Fundo - Desktop (telas acima de 768px) */
+    @media (min-width: 768px) {
+        body {
+            background-image: url('img/fundo-desktop.jpg'); /* Substitua pelo nome do seu arquivo de desktop */
+        }
+    }
+
     .fade-out {
         animation: fadeOut 1s forwards;
     }
@@ -182,11 +209,11 @@
     </style>
 </head>
 
-<body class="bg-black">
+<body>
 
     <!-- CAPA -->
     <section id="capa"
-        class="min-h-screen bg-black flex justify-center items-center px-4">
+        class="min-h-screen flex justify-center items-center px-4">
 
         <div class="max-w-[380px] mx-auto min-h-screen flex flex-col items-center text-center px-5 py-8 relative">
             
@@ -218,25 +245,19 @@
 
     <!-- CONVITE -->
     <section id="convite"
-        class="hidden min-h-screen bg-black text-white relative overflow-hidden">
+        class="hidden min-h-screen text-white relative overflow-hidden">
+        
         <!-- Poeira dourada apenas mobile -->
         <img
             id="poeiraDourada"
             src="img/poeira-dourada.png"
             alt=""
             class="block md:hidden absolute bottom-0 left-0 mt-8 w-full pointer-events-none z-0">
-        <div
-            id="borda"
-            class="hidden md:block absolute inset-0 bg-contain bg-center bg-no-repeat opacity-70 pointer-events-none"
-            style="background-image: url('img/arabesco-laterais.png');">
-        </div>
-        
-
         <!-- Máscara -->
         <img
-            src="img/mascara.png"
+            src="img/logo-julia.png"
             id="mascara"
-            class="absolute top-0 right-0 w-40 sm:w-52 md:w-50 lg:w-50 z-10"
+            class="absolute top-2 right-4 w-24 sm:w-40 md:w-40 lg:w-40 z-10"
             alt="Máscara">
 
             <!-- Logo Baile de Máscaras -->
@@ -257,7 +278,7 @@
 
             <h1
                 style="font-family:'Great Vibes',cursive;"
-                class="text-[#d4af37] text-8xl mt-16 sm:mt-10 md:mt-10">
+                class="texto-dourado text-8xl mt-16 sm:mt-10 md:mt-10">
 
                 Júlia
 
@@ -266,7 +287,7 @@
             <!-- 15 anos -->
             <h2
                 style="font-family:'Great Vibes',cursive;"
-                class="text-[#d4af37] text-6xl">
+                class="texto-dourado text-6xl">
 
                 15 anos
 
@@ -280,7 +301,7 @@
 
             <!-- Texto -->
             <p
-                class="text-[#d4af37] text-sm leading-6 mt-2 max-w-[280px]">
+                class="texto-dourado text-sm leading-6 mt-2 max-w-[280px]">
 
                 Meu dia tão esperado está chegando...
                 <br>
@@ -299,7 +320,7 @@
 
             <!-- Traje -->
             <p
-                class="mt-6 text-[#d4af37] text-sm">
+                class="mt-6 texto-dourado text-sm">
 
                 Traje sugerido - Social/Esporte fino - All Black
 
@@ -324,12 +345,20 @@
                 <a
                     href="https://wa.me/5519994715062?text=Ol%C3%A1!%20Gostaria%20de%20confirmar%20presen%C3%A7a%20no%20Baile%20de%20M%C3%A1scaras%20da%20J%C3%BAlia%20dia%2004%2F12%2F2026.%0A%0ANome(s):%20%0A%0AIdade(s):"
                     target="_blank"
-                    class="w-24 h-24 bg-[#9d1414] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition duration-300">
+                    rel="noopener noreferrer"
+                    class="relative w-24 h-24 flex items-center justify-center shadow-xl hover:scale-110 transition duration-300">
 
+                    <!-- Imagem de Fundo (Círculo) -->
+                    <img 
+                        src="img/circulo.png" 
+                        alt="Fundo" 
+                        class="absolute inset-0 w-full h-full object-contain pointer-events-none z-0">
+
+                    <!-- Ícone Por Cima (WhatsApp) -->
                     <img
                         src="img/whatsapp.png"
                         alt="WhatsApp"
-                        class="w-12 h-12 object-contain">
+                        class="w-10 h-12 object-contain relative z-10">
 
                 </a>
                 <!-- Localização -->
@@ -337,11 +366,18 @@
                     href="https://maps.app.goo.gl/bTWgwvDjULR4H4Aq6"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="w-24 h-24 bg-[#9d1414] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition duration-300">
+                    class="relative w-24 h-24 flex items-center justify-center shadow-xl hover:scale-110 transition duration-300">
 
+                    <!-- Imagem de fundo do círculo -->
+                    <img 
+                        src="img/circulo.png" 
+                        alt="Fundo" 
+                        class="absolute inset-0 w-full h-full object-contain pointer-events-none z-0">
+
+                    <!-- Ícone SVG por cima -->
                     <svg xmlns="http://www.w3.org/2000/svg"
-                        class="w-12 h-12"
-                        fill="white"
+                        class="w-12 h-12 relative z-10"
+                        fill="black"
                         viewBox="0 0 24 24">
 
                         <path
@@ -353,7 +389,8 @@
             </div>
             <button
                 id="btnMais"
-                class="mt-4 px-10 bg-[#9d1414] rounded-full text-white tracking-[3px] uppercase shadow-lg hover:scale-105 transition">
+                class="mt-4 px-10 py-3 bg-cover bg-center rounded-full text-black tracking-[3px] uppercase shadow-lg hover:scale-105 transition"
+                style="background-image: url('img/oval.png');">
 
                 Ver Mais
 
@@ -365,19 +402,13 @@
 
     <!-- SEGUNDA PÁGINA -->
     <section id="conviteExtra"
-            class="hidden min-h-screen bg-black text-white relative overflow-hidden">
+            class="hidden min-h-screen text-white relative overflow-hidden">
 
         <!-- Poeira -->
         <img
             src="img/poeira-dourada.png"
             alt=""
             class="block md:hidden absolute opacity-40 bottom-0 left-0 w-full pointer-events-none z-0">
-
-        <!-- Borda Desktop -->
-        <div
-            class="hidden md:block absolute inset-0 bg-contain bg-center bg-no-repeat opacity-70 pointer-events-none"
-            style="background-image: url('img/arabesco-laterais.png');">
-        </div>
 
         <div
             class="max-w-[380px] mx-auto min-h-screen flex flex-col items-center text-center px-6 py-12">
@@ -400,7 +431,7 @@
             <!-- Lista -->
             <div class="mt-2 text-left">
 
-                <ul class="text-[#d4af37] text-sm leading-8 space-y-3">
+                <ul class="texto-dourado text-sm leading-8 space-y-3">
 
                     <li>
                         • O Traje sugerido é Social/Esporte fino - All Black
@@ -433,22 +464,22 @@
                     class="flex justify-center gap-4">
 
                     <div class="text-center">
-                        <div id="dias" class="text-[#d4af37] text-3xl font-bold">00</div>
+                        <div id="dias" class="texto-dourado text-3xl font-bold">00</div>
                         <div class="text-xs text-white uppercase">Dias</div>
                     </div>
 
                     <div class="text-center">
-                        <div id="horas" class="text-[#d4af37] text-3xl font-bold">00</div>
+                        <div id="horas" class="texto-dourado text-3xl font-bold">00</div>
                         <div class="text-xs text-white uppercase">Horas</div>
                     </div>
 
                     <div class="text-center">
-                        <div id="minutos" class="text-[#d4af37] text-3xl font-bold">00</div>
+                        <div id="minutos" class="texto-dourado text-3xl font-bold">00</div>
                         <div class="text-xs text-white uppercase">Min</div>
                     </div>
 
                     <div class="text-center">
-                        <div id="segundos" class="text-[#d4af37] text-3xl font-bold">00</div>
+                        <div id="segundos" class="texto-dourado text-3xl font-bold">00</div>
                         <div class="text-xs text-white uppercase">Seg</div>
                     </div>
 

@@ -10,7 +10,6 @@ const mascara = document.getElementById("mascara");
 const logo = document.getElementById("logoConvite");
 const conteudo = document.getElementById("conteudoConvite");
 const poeira = document.getElementById("poeiraDourada");
-const borda = document.getElementById("borda");
 
 btnEntrar.addEventListener("click", () => {
 
@@ -29,7 +28,6 @@ btnEntrar.addEventListener("click", () => {
             convite.classList.remove("hidden");
 
             poeira.classList.add("poeira-animar");
-            borda.classList.add("borda-animar");
             // máscara entra primeiro
             mascara.classList.add("mascara-animar");
 
